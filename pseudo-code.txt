@@ -1,3 +1,7 @@
+INITIALIZE counter variable humanScore and set initial value to 0
+INITIALIZE counter variable computerScore and set initial value to 0
+
+
 START getComputerChoice
     INITIALIZE a number variable who's value is random between 0 and 1
     IF number is between 0 and 0.33 return "rock"
@@ -7,4 +11,28 @@ END getComputerChoice
 
 START getHumanChoice
     OBTAIN user input of "rock", "paper", or "scissors" and return it
+    IF user input does not match any choices, return "not a valid choice"
 END getHumanChoice
+
+START playRound that has humanChoice and computerChoice as parameters
+    CHANGE humanChoice and computerChoice to lowercase
+    IF humanChoice is the same as computerChoice
+        OUTPUT "Tie! You both chose 'choice'"
+    IF humanChoice is rock AND computerChoice is paper
+        OUTPUT "You lose! 'Paper' beats 'rock'
+        INCREMENT computerScore by 1
+    IF humanChoice is rock AND computerChoice is scissors
+        OUTPUT "You win! 'Rock' beats 'scissors'
+        INCREMENT humanScore by 1
+    IF humanChoice is paper AND computerChoice is rock
+        OUTPUT "You win! 'Paper' beats 'rock'
+        INCREMENT humanScore by 1
+    IF humanChoice is paper AND computerChoice is scissors
+        OUTPUT "You lose! 'Scissors' beats 'paper'
+        INCREMENT computerScore by 1
+    IF humanChoice is rock AND computerChoice is paper
+        OUTPUT "You lose! 'Paper' beats 'rock'
+        INCREMENT computerScore by 1
+    IF humanChoice is rock AND computerChoice is scissors
+        OUTPUT "You win! 'Rock' beats 'scissors'
+        INCREMENT humanScore by 1
