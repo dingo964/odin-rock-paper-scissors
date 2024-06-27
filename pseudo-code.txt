@@ -30,9 +30,9 @@ START playRound that has humanChoice and computerChoice as parameters
     IF humanChoice is paper AND computerChoice is scissors
         OUTPUT "You lose! 'Scissors' beats 'paper'
         INCREMENT computerScore by 1
-    IF humanChoice is rock AND computerChoice is paper
-        OUTPUT "You lose! 'Paper' beats 'rock'
+    IF humanChoice is scissors AND computerChoice is rock
+        OUTPUT "You lose! 'Rock' beats 'scissors'
         INCREMENT computerScore by 1
-    IF humanChoice is rock AND computerChoice is scissors
-        OUTPUT "You win! 'Rock' beats 'scissors'
+    IF humanChoice is scissors AND computerChoice is paper
+        OUTPUT "You win! 'Scissors' beats 'paper'
         INCREMENT humanScore by 1
