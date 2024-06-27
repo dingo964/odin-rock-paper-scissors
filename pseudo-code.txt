@@ -1,4 +1,4 @@
-
+CALL playGame
 
 
 START getComputerChoice function
@@ -27,7 +27,6 @@ START playGame function that calls playRound to play 5 rounds, keeps track of th
     FOR counter = 1 to 5
         CALL getHumanChoice and assign return value to humanChoice
         CALL getComputerChoice and assign return value to computerChoice
-
         CALL playRound
     END FOR counter
 
