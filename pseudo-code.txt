@@ -1,20 +1,45 @@
-INITIALIZE counter variable humanScore and set initial value to 0
-INITIALIZE counter variable computerScore and set initial value to 0
 
 
-START getComputerChoice
+
+START getComputerChoice function
     INITIALIZE a number variable who's value is random between 0 and 1
     IF number is between 0 and 0.33 return "rock"
     IF number is between 0.33 and 0.66 return "paper"
     IF number is between 0.66 and 1 return "scissors"
 END getComputerChoice
 
-START getHumanChoice
+START getHumanChoice function
     OBTAIN user input of "rock", "paper", or "scissors" and return it
     IF user input does not match any choices, return "not a valid choice"
 END getHumanChoice
 
-START playRound that has humanChoice and computerChoice as parameters
+
+
+START playGame function that calls playRound to play 5 rounds, keeps track of the scores and declares a winner at the end
+
+    INITIALIZE counter variable humanScore and set initial value to 0
+    INITIALIZE counter variable computerScore and set initial value to 0
+    INITIALIZE round counter variable and set initial value to 1
+
+    INITIALIZE humanChoice variable
+    INITIALIZE computerChoice variable
+
+    FOR counter = 1 to 5
+        CALL getHumanChoice and assign return value to humanChoice
+        CALL getComputerChoice and assign return value to computerChoice
+
+        CALL playRound
+    END FOR counter
+
+    IF humanScore is greater than computerScore, output "You win!"
+        ELSE IF computerScore is greater than humanScore, output "You lose!"
+        ELSE output "Tie!"
+
+
+
+
+
+    START playRound that has humanChoice and computerChoice as parameters
     CHANGE humanChoice and computerChoice to lowercase
     IF humanChoice is the same as computerChoice
         OUTPUT "Tie! You both chose 'choice'"
@@ -36,3 +61,6 @@ START playRound that has humanChoice and computerChoice as parameters
     IF humanChoice is scissors AND computerChoice is paper
         OUTPUT "You win! 'Scissors' beats 'paper'
         INCREMENT humanScore by 1
+    END playRound
+
+
